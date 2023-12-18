@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<!-- saved from url=(0179)https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-CD0101EN-SkillsNetwork/labs/GitHubLabs/GitBash_Install.md.html?origin=www.coursera.org -->
+<html lang="en" foxified=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./GitBash_Install.md_files/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./GitBash_Install.md_files/default.min.css">
+  <style type="text/css">/* this file is used for labs on cognitiveclass.ai that were written in markdown */
+
+/* applies to images, i.e. "![]()" in markdown */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* add padding and margins */
+body {
+  padding: 10px;
+  margin: 10px;
+}
+
+/* applies to tables, i.e. "|--|--|" in markdown */
+table td,
+table th {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+/* applies to using quotes, i.e. ">" in markdown */
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 1em 10px 0.1em 10px;
+  quotes: '\201C''\201D''\2018''\2019';
+}
+
+/* the headers need some spacing */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+  padding-top: 20px;
+}
+
+/* Add padding between nested list item */
+ul > li > ul {
+  padding-bottom: 1rem;
+}
+
+.code-badge-language {
+  display: none;
+}
+.code-badge-copy-icon {
+  background: url('data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgZm9jdXNhYmxlPSJmYWxzZSIgZGF0YS1wcmVmaXg9ImZhciIgZGF0YS1pY29uPSJjb3B5IiBjbGFzcz0ic3ZnLWlubGluZS0tZmEgZmEtY29weSBmYS13LTE0IiByb2xlPSJpbWciIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDQ0OCA1MTIiPjxwYXRoIGZpbGw9ImN1cnJlbnRDb2xvciIgZD0iTTQzMy45NDEgNjUuOTQxbC01MS44ODItNTEuODgyQTQ4IDQ4IDAgMCAwIDM0OC4xMTggMEgxNzZjLTI2LjUxIDAtNDggMjEuNDktNDggNDh2NDhINDhjLTI2LjUxIDAtNDggMjEuNDktNDggNDh2MzIwYzAgMjYuNTEgMjEuNDkgNDggNDggNDhoMjI0YzI2LjUxIDAgNDgtMjEuNDkgNDgtNDh2LTQ4aDgwYzI2LjUxIDAgNDgtMjEuNDkgNDgtNDhWOTkuODgyYTQ4IDQ4IDAgMCAwLTE0LjA1OS0zMy45NDF6TTI2NiA0NjRINTRhNiA2IDAgMCAxLTYtNlYxNTBhNiA2IDAgMCAxIDYtNmg3NHYyMjRjMCAyNi41MSAyMS40OSA0OCA0OCA0OGg5NnY0MmE2IDYgMCAwIDEtNiA2em0xMjgtOTZIMTgyYTYgNiAwIDAgMS02LTZWNTRhNiA2IDAgMCAxIDYtNmgxMDZ2ODhjMCAxMy4yNTUgMTAuNzQ1IDI0IDI0IDI0aDg4djIwMmE2IDYgMCAwIDEtNiA2em02LTI1NmgtNjRWNDhoOS42MzJjMS41OTEgMCAzLjExNy42MzIgNC4yNDMgMS43NTdsNDguMzY4IDQ4LjM2OGE2IDYgMCAwIDEgMS43NTcgNC4yNDNWMTEyeiI+PC9wYXRoPjwvc3ZnPg==');
+  background-size: 100% 100%;
+}
+
+.code-badge {
+  bottom: 0 !important;
+  top: unset !important;
+  background: unset !important;
+}
+
+.code-badge > .code-badge-check-icon {
+  background: green;
+}
+.code-badge-check-icon {
+  font-size: 1.2em;
+  cursor: pointer;
+  padding: 0 7px;
+  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGFyaWEtaGlkZGVuPSJ0cnVlIiBmb2N1c2FibGU9ImZhbHNlIiBkYXRhLXByZWZpeD0iZmFzIiBkYXRhLWljb249ImNoZWNrIiBjbGFzcz0ic3ZnLWlubGluZS0tZmEgZmEtY2hlY2sgZmEtdy0xNiIgcm9sZT0iaW1nIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgc3R5bGU9IiYjMTA7ICAgIGNvbG9yOiAjMmFmZjMyOyYjMTA7Ij48cGF0aCBmaWxsPSJjdXJyZW50Q29sb3IiIGQ9Ik0xNzMuODk4IDQzOS40MDRsLTE2Ni40LTE2Ni40Yy05Ljk5Ny05Ljk5Ny05Ljk5Ny0yNi4yMDYgMC0zNi4yMDRsMzYuMjAzLTM2LjIwNGM5Ljk5Ny05Ljk5OCAyNi4yMDctOS45OTggMzYuMjA0IDBMMTkyIDMxMi42OSA0MzIuMDk1IDcyLjU5NmM5Ljk5Ny05Ljk5NyAyNi4yMDctOS45OTcgMzYuMjA0IDBsMzYuMjAzIDM2LjIwNGM5Ljk5NyA5Ljk5NyA5Ljk5NyAyNi4yMDYgMCAzNi4yMDRsLTI5NC40IDI5NC40MDFjLTkuOTk4IDkuOTk3LTI2LjIwNyA5Ljk5Ny0zNi4yMDQtLjAwMXoiLz48L3N2Zz4=');
+  background-size: 100% 100%;
+}
+</style><script type="text/javascript" src="./GitBash_Install.md_files/c7fa7451-6f95-4815-ac32-b8cc2537837a" data-awssuidacr="Y7JaXyTJJC19z0ZfHccdSW3vmGb2mi2E"></script></head>
+  <body data-new-gr-c-s-check-loaded="14.1102.0" data-gr-ext-installed="">
+    <h1>Installing Git Bash</h1>
+    <img style="float:left;" src="./GitBash_Install.md_files/IDSNlogo.png" width="200" height="200">
+    <p><strong>Estimated time</strong>: 20 minutes</p>
+    <h2>What is Git Bash?</h2>
+    <p>Git Bash for Windows is simply a package that includes both <em>Git</em> and <em>Bash</em>.</p>
+    <p>Git is an open-source version control system for tracking source code changes when developing software. It keeps a commit history that allows you to revert to a stable state in case you make errors in your code. Git also enables multiple developers to collaborate on the same code base.</p>
+    <p>Bash is a Unix command-line shell. The name is an acronym for <em>Bourne-Again Shell</em>. It comes with useful Unix commands like cat, ssh, SCP, etc., which are not usually found on Windows.</p>
+    <h2>Installing Git Bash for Windows</h2>
+    <p>To install Git Bash for Windows to your local system, complete the following steps:</p>
+    <ol>
+      <li>
+        <p>Go to the <a href="https://git-scm.com/downloads?utm_medium=Exinfluencer&amp;utm_source=Exinfluencer&amp;utm_content=000026UJ&amp;utm_term=10006555&amp;utm_id=NA-SkillsNetwork-Channel-SkillsNetworkCoursesIBMDeveloperSkillsNetworkCD0101ENSkillsNetwork1051-2022-01-01" target="_blank" rel="external">Git download page</a>. Click <strong>Download [version number] for Windows</strong>, as shown in the following image:</p>
+        <p>
+          <img src="./GitBash_Install.md_files/Download.png" alt="image">
+        </p>
+        <p>You will be redirected to a new page and the download will start.</p>
+        <p>
+          <img src="./GitBash_Install.md_files/Download_start.png" alt="image">
+        </p>
+        <p><strong>Note</strong>: If the download doesn't start, click <strong>Click here to download manually</strong>.</p>
+      </li>
+      <li>
+        <p>Go to the folder where you saved the file and double-click to open it.</p>
+        <p>
+          <img src="./GitBash_Install.md_files/Run.png" alt="image">
+        </p>
+      </li>
+      <li>
+        <p>Click <strong>Run</strong> to begin the installation.</p>
+        <p>
+          <img src="./GitBash_Install.md_files/Next1.png" alt="image">
+        </p>
+      </li>
+      <li>
+        <p>Select the location where you want to install Git Bash. <strong>Note</strong>: It's recommended that you simply install to the default location. Click <strong>Next</strong>.</p>
+        <p>
+          <img src="./GitBash_Install.md_files/Next2.png" alt="image">
+        </p>
+      </li>
+      <li>
+        <p>Choose the components you want to install, or simply leave the default options selected. Click <strong>Next</strong>.</p>
+        <p>
+          <img src="./GitBash_Install.md_files/Next3.png" alt="image">
+        </p>
+      </li>
+      <li>
+        <p>You can change the name of the start menu folder or simply leave the default name as is. Click <strong>Next</strong>.</p>
+        <p>
+          <img src="./GitBash_Install.md_files/Next4.png" alt="image">
+        </p>
+      </li>
+      <li>
+        <p>Select the default editor for Git to use. Click <strong>Next</strong>.</p>
+        <p>
+          <img src="./GitBash_Install.md_files/Next5.png" alt="image">
+        </p>
+      </li>
+      <li>
+        <p>Choose how you want to use Git from the command line. Click <strong>Next</strong>.</p>
+        <p>
+          <img src="./GitBash_Install.md_files/Next6.png" alt="image">
+        </p>
+      </li>
+      <li>
+        <p>Select <strong>Use the OpenSSL library</strong>. Click <strong>Next</strong>.</p>
+        <p>
+          <img src="./GitBash_Install.md_files/Next7.png" alt="image">
+        </p>
+      </li>
+      <li>
+        <p>Configure your line ending conversions for Windows by selecting the default option, <strong>Checkout Windows-style, commit Unix-style line endings</strong>. Click <strong>Next</strong>.</p>
+        <p>
+          <img src="./GitBash_Install.md_files/Next8.png" alt="image">
+        </p>
+      </li>
+      <li>
+        <p>Configure your terminal emulator to use with Git Bash by selecting the default option, <strong>Use MinTTY(the default terminal of MSYS2)</strong>. Click <strong>Next</strong>.</p>
+        <p>
+          <img src="./GitBash_Install.md_files/Next9.png" alt="image">
+        </p>
+      </li>
+      <li>
+        <p>Configure the default behavior for a <code>git pull</code> by selecting <strong>Default (fast-forward or merge)</strong>. Click <strong>Next</strong>.</p>
+        <p>
+          <img src="./GitBash_Install.md_files/Next10.png" alt="image">
+        </p>
+      </li>
+      <li>
+        <p>Select any additional options you want to install. (The default option is sufficient to use Git Bash successfully.) Click <strong>Next</strong>.</p>
+        <p>
+          <img src="./GitBash_Install.md_files/Next11.png" alt="image">
+        </p>
+      </li>
+      <li>
+        <p>You can enable experimental options if you choose to. By enabling these options, you will be able to try newer features that are still being developed. However, you do not have to select any experimental options to use Git Bash. Click <strong>Install</strong> to complete the installation with the options you have chosen. The installation runs and when complete, a Completing the Git Setup Wizard window opens.</p>
+        <p>
+          <img src="./GitBash_Install.md_files/Next12.png" alt="image">
+        </p>
+      </li>
+      <li>
+        <p>Leave the checkboxes selected and click <strong>Next</strong>.</p>
+        <p>
+          <img src="./GitBash_Install.md_files/WaitInstall.png" alt="image">
+        </p>
+      </li>
+    </ol>
+    <p>The Git Bash terminal opens. You are now able to enter Git and Bash commands.</p>
+    <p>
+      <img src="./GitBash_Install.md_files/terminal.png" alt="image">
+    </p>
+    <h2>Summary</h2>
+    <p>Congratulations, you have now successfully installed and launched Git Bash for Windows.</p>
+    <h2>Tutorial details</h2>
+    <p><strong>Author:</strong></p>
+    <p>Malika Singla</p>
+    <p><strong>Changelog:</strong></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Version</th>
+          <th>Changed by</th>
+          <th>Change Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2020-07-22</td>
+          <td>0.3</td>
+          <td>Malika Singla</td>
+          <td>Removed quotes and replaced with bold code</td>
+        </tr>
+        <tr>
+          <td>2020-07-16</td>
+          <td>0.2</td>
+          <td>Malika Singla</td>
+          <td>Changed logo, added effort, spell check and step number added</td>
+        </tr>
+        <tr>
+          <td>2020-07-15</td>
+          <td>0.1</td>
+          <td>Malika Singla</td>
+          <td>Initial version created</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2></h2>
+    <h3 align="center">© IBM Corporation 2020. All rights reserved.</h3>
+    <h3></h3>
+    <script>window.addEventListener('load', function() {
+snFaculty.inject();
+});</script>
+    <script src="./GitBash_Install.md_files/inject.43989f87.js"></script>
+    <script src="./GitBash_Install.md_files/highlight.min.js"></script>
+    <script src="./GitBash_Install.md_files/highlightjs-badge.min.js"></script>
+  
+
+<style>
+@media print {
+   .code-badge { display: none; }
+}
+    .code-badge-pre {
+        position: relative;
+    }
+    .code-badge {
+        display: flex;
+        flex-direction: row;
+        white-space: normal;
+        background: transparent;
+        background: #333;
+        color: white;
+        font-size: 0.875em;
+        opacity: 0.5;
+        transition: opacity linear 0.5s;
+        border-radius: 0 0 0 7px;
+        padding: 5px 8px 5px 8px;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .code-badge.active {
+        opacity: 0.8;
+    }
+
+    .code-badge:hover {
+        opacity: .95;
+    }
+
+    .code-badge a,
+    .code-badge a:hover {
+        text-decoration: none;
+    }
+
+    .code-badge-language {
+        margin-right: 10px;
+        font-weight: 600;
+        color: goldenrod;
+    }
+    .code-badge-copy-icon {
+        font-size: 1.2em;
+        cursor: pointer;
+        padding: 0 7px;
+        margin-top:2;
+    }
+    .fa.text-success:{ color: limegreen !important }
+</style><div id="CodeBadgeTemplate" style="display:none">
+    <div class="code-badge">
+        <div class="code-badge-language">{{language}}</div>
+        <div title="Copy to clipboard">
+            <i class="{{copyIconClass}} code-badge-copy-icon"></i>
+        </div>
+     </div>
+</div><script>(() => {
+        window.addoncropExtensions = window.addoncropExtensions || [];
+        window.addoncropExtensions.push({
+            mode: 'emulator',
+            emulator: 'Foxified',
+            extension: {
+                id: 44,
+                name: 'YouTube Downloader by Addoncrop',
+                version: '17.2.8',
+                date: 'September 4, 2022',
+            },
+            flixmateConnected: false,
+        });
+    })();</script></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

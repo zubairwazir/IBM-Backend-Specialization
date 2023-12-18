@@ -1,0 +1,29 @@
+# Django specific
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db.sqlite3
+
+# Secret keys and sensitive information
+*.env
+.env
+.secret_key
+
+# Static and media files (generated)
+/static/
+/media/
+
+# Dependency directories
+venv/
+env/
+instance/
+.ipynb_checkpoints
+
+.zip
+.txt
+.pdf
+.jpg
+.jpeg
+.png
+
